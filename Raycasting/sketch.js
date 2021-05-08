@@ -1,29 +1,21 @@
 let walls = [];
-let ray;
-let wall;
+let system;
 
 function setup() {
     createCanvas(800, 800);
-    ray = new Ray(width / 2, height / 2);
-    wall = new Wall();
 
-    // for (let i = 0; i < 5; i++) {
-    //     walls[i] = new Wall();
-    // }
+    system = new Raysystem(10, 10);
+    for (let i = 0; i < 5; i++) {
+        walls[i] = new Wall();
+    }
 }
 
 function draw() {
     background(0);
-    ray.show();
-    wall.show();
 
-    ray.calculateDirection();
-    let intersection = ray.intersection(wall);
-    if (intersection) {
-        ellipse(intersection.x, intersection.y, 5, 5);
+    system.update();
+    system.checkWalls(walls);
+    for (let wall of walls) {
+        wall.show();
     }
-
-    //for (wall of walls) {
-    //    wall.show();
-    //}
 }

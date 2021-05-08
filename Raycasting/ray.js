@@ -1,9 +1,8 @@
 class Ray {
-    constructor(x, y) {
+    constructor(x, y, angle) {
         // Posizione e direzione
         this.pos = createVector(x, y);
-        this.direction = createVector(1, 0);
-        this.direction.normalize();
+        this.direction = p5.Vector.fromAngle(angle);
     }
 
     calculateDirection() {

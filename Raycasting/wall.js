@@ -1,9 +1,9 @@
 class Wall {
     constructor() {
-        // this.start = createVector(random(width), random(height));
-        // this.end = createVector(random(width), random(height));
-        this.start = createVector(600, 0);
-        this.end = createVector(600, height);
+        this.start = createVector(random(width), random(height));
+        this.end = createVector(random(width), random(height));
+        //this.start = createVector(600, 0);
+        //this.end = createVector(600, height);
     }
 
     show() {
