@@ -2,7 +2,7 @@ class Raysystem {
     constructor(x, y) {
         this.rays = [];
         this.pos = createVector(x, y);
-        for (let i = 0; i < 360; i += 5) {
+        for (let i = 0; i < 360; i += 1) {
             this.rays.push(new Ray(this.pos.x, this.pos.y, i));
         }
     }
@@ -36,6 +36,8 @@ class Raysystem {
 
             if (closer) {
                 line(ray.pos.x, ray.pos.y, closer.x, closer.y);
+            } else {
+                line(ray.pos.x, ray.pos.y, ray.pos.x + ray.direction.x * 1000, ray.pos.y + ray.direction.y * 1000);
             }
         }
     }
